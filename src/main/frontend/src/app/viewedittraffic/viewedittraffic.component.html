@@ -1,0 +1,57 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Route</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="table-overlay mat-elevation-z8">
+      <!-- <form class="example-form"> -->
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> Traffic Id </th>
+          <td mat-cell *matCellDef="let trafficList"> {{ trafficList.id }} </td>
+        </ng-container>
+
+        <!-- Node Column -->
+        <ng-container matColumnDef="planetOrigin">
+          <th mat-header-cell *matHeaderCellDef> Planet Origin </th>
+          <td mat-cell *matCellDef="let trafficList"> {{trafficList.route.planetOrigin}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="planetDestination">
+          <th mat-header-cell *matHeaderCellDef> Planet Destination </th>
+          <td mat-cell *matCellDef="let trafficList"> {{trafficList.route.planetDestination}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="distance">
+          <th mat-header-cell *matHeaderCellDef> Distance </th>
+          <td mat-cell *matCellDef="let trafficList"> {{trafficList.route.distance}} </td>
+        </ng-container>
+        <!-- Name Column -->
+        <ng-container matColumnDef="delay">
+          <th mat-header-cell *matHeaderCellDef> Distance </th>
+          <td mat-cell *matCellDef="let trafficList"> {{trafficList.delay}} </td>
+        </ng-container>
+        <!-- Name Column -->
+<!--         <ng-container matColumnDef="timeDelay">
+          <th mat-header-cell *matHeaderCellDef> TimeDelay </th>
+          <td mat-cell *matCellDef="let routedataList"> {{routedataList.timeDelay}} </td>
+        </ng-container> -->
+        <!-- Action Column-->
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef> Action </th>
+          <td mat-cell *matCellDef="let trafficList">
+            <button mat-button (click)="triggerEdit(trafficList)"> Edit </button>
+            &nbsp;
+            <button mat-button (click)="deleteEntry(trafficList)"> Delete </button>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <!-- </form> -->
+    </div>
+  </mat-card-content>
+</mat-card>

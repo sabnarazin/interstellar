@@ -1,0 +1,30 @@
+/* .example-card{
+margin: 15%;
+padding: 100px;
+top: 10px;
+left: 120px;
+z-index: 2;
+position: fixed;
+} */
+
+.table-overlay {
+  width: 100%;
+  margin: 0px auto;
+  display: flex;
+  border: 1px solid grey;
+  border-radius: 4px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.mat-header-cell {
+  background-color: #444;
+  color: white !important;
+}
+
+.mat-elevation-z8 {
+  width: 100%;
+
+}
+
+

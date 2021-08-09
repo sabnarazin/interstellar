@@ -1,0 +1,16 @@
+.example-card {
+  margin: 10px auto;
+  width: 90%;
+  max-height: 900px;
+}
+
+.mat-card-content {
+  display: flex;
+  flex-direction: column;
+  height: 96%;
+}
+
+
+.example-form .row {
+  display: block;
+}

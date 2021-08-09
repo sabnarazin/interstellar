@@ -1,0 +1,29 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Create Planet Route</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form">
+            <mat-form-field class="row">
+              <mat-label>Planet Origin</mat-label>
+              <mat-select [formControl]="routeForm1">
+                <mat-option *ngFor="let routeForm1 of routeList" [value]="routeForm1">{{routeForm1.planetName}}({{routeForm1.planetNode}})</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="row">
+              <mat-label>Planet Destination</mat-label>
+              <mat-select [formControl]="routeForm2">
+                <mat-option *ngFor="let routeForm2 of routeList" [value]="routeForm2">{{routeForm2.planetName}}({{routeForm2.planetNode}})</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="row">
+              <input matInput placeholder="Distance" [(ngModel)]="distance" name="distance" required>
+            </mat-form-field>
+    </form>
+    <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="routeSave()" color="primary">Save</button>
+    <button mat-raised-button (click)="cancel()" color="primary">Cancel</button>
+  </mat-card-actions>
+</mat-card>

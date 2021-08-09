@@ -1,0 +1,22 @@
+<mat-toolbar  class="toolbar" color="primary">
+  <div>
+      <button mat-icon-button (click)="onToggleSidenav()">
+        <mat-icon aria-hidden="false" aria-label="check mark icon">fact_check</mat-icon>
+      </button>
+  </div>
+  <div>
+      <a >Interstellar Transport System</a>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+      <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+          <li>
+<!--               <button mat-raised-button (click)="click()">
+                  Metric Entry</button>-->
+                  <button mat-raised-button color="accent" (click)="click()">
+                    Find Shortest Path
+                  </button>
+          </li>
+      </ul>
+  </div>
+</mat-toolbar>
+ <!-- fxHide.gt-xs-->

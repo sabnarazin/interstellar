@@ -1,0 +1,31 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Shortest Path</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form">
+      <mat-form-field class="row">
+        <input matInput placeholder="Earth" [(ngModel)]="earth" name="earth" required>
+      </mat-form-field>
+      <mat-form-field class="row">
+        <mat-label>Planet Destination</mat-label>
+        <mat-select [formControl]="routeForm1">
+          <mat-option *ngFor="let routeForm1 of routeList" [value]="routeForm1">
+            {{routeForm1.planetName}}({{routeForm1.planetNode}})</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+    <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="findPath()" color="primary">Find Path</button>
+    <button mat-raised-button (click)="cancel()" color="primary">Cancel</button>
+  </mat-card-actions>
+  <mat-toolbar class="route-overlay" *ngIf="path != null && path != ''">
+    <span class="detail-label"><mat-icon>moving</mat-icon>&nbsp;Shortest Route:&nbsp; </span>
+    <span *ngFor="let path of pathList; let i = index;">
+      {{ path }}
+      <mat-icon *ngIf="i < pathList.length">arrow_right_alt</mat-icon>
+    </span>
+  </mat-toolbar>
+</mat-card>

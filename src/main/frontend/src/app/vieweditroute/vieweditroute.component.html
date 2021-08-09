@@ -1,0 +1,53 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Route</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="table-overlay mat-elevation-z8">
+      <!-- <form class="example-form"> -->
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- ID Column -->
+        <ng-container matColumnDef="routeId">
+          <th mat-header-cell *matHeaderCellDef> Route Id </th>
+          <td mat-cell *matCellDef="let routeList"> {{ routeList.routeId }} </td>
+        </ng-container>
+
+        <!-- Node Column -->
+        <ng-container matColumnDef="planetOrigin">
+          <th mat-header-cell *matHeaderCellDef> Planet Node </th>
+          <td mat-cell *matCellDef="let routedataList"> {{routedataList.planetOrigin}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="planetDestination">
+          <th mat-header-cell *matHeaderCellDef> Planet Name </th>
+          <td mat-cell *matCellDef="let routedataList"> {{routedataList.planetDestination}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="distance">
+          <th mat-header-cell *matHeaderCellDef> Distance </th>
+          <td mat-cell *matCellDef="let routeList"> {{routeList.distance}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+<!--         <ng-container matColumnDef="timeDelay">
+          <th mat-header-cell *matHeaderCellDef> TimeDelay </th>
+          <td mat-cell *matCellDef="let routedataList"> {{routedataList.timeDelay}} </td>
+        </ng-container> -->
+        <!-- Action Column-->
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef> Action </th>
+          <td mat-cell *matCellDef="let routeList">
+            <button mat-button (click)="triggerEdit(routeList)"> Edit </button>
+            &nbsp;
+            <button mat-button (click)="deleteEntry(routeList)"> Delete </button>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <!-- </form> -->
+    </div>
+  </mat-card-content>
+</mat-card>
